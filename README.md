@@ -29,10 +29,11 @@ python3 model_with_self_attn.py
 ```
 If you use this codes please cite the following article
 ```
-
+```
 @article{singh20203d,
   title={3D Deep Learning on Medical Images: A Review},
   author={Singh, Satya P and Wang, Lipo and Gupta, Sukrit and Goli, Haveesh and Padmanabhan, Parasuraman and Guly{\'a}s, Bal{\'a}zs},
   journal={arXiv preprint arXiv:2004.00218},
   year={2020}
 }
+```
