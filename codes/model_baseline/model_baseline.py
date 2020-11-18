@@ -87,9 +87,9 @@ if __name__ == '__main__':
 	
     for DATA_FILE in DATA_FILES:
         data_input_file = os.path.join(BASE_DIR, DATA_FILE) 
-        tmp = np.load(data_input_file, allow_pickle=True)
-        X = tmp['X']
-        X = np.squeeze(X, axis = 1)
+        tmp = np.load(data_input_file, allow_pickle=True) # tmp.files  ['y', 'X', 'folds']  
+        X = tmp['X'] #(20846, 1, 100, 3)
+        X = np.squeeze(X, axis = 1) #(20846, 100, 3)
         y_one_hot = tmp['y']
         folds = tmp['folds']
 
@@ -110,7 +110,7 @@ if __name__ == '__main__':
             X_train, y_train, y_train_one_hot = X[train_idx], y[train_idx], y_one_hot[train_idx]
             X_test, y_test, y_test_one_hot = X[test_idx], y[test_idx], y_one_hot[test_idx]
 
-            X_train_ = np.expand_dims(X_train, axis = 3)
+            X_train_ = np.expand_dims(X_train, axis = 3)  # (18393, 100, 3, 1) 
             X_test_ = np.expand_dims(X_test, axis = 3)
             
             train_trailing_samples =  X_train_.shape[0]%BATCH_SIZE
